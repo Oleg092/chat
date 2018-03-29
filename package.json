@@ -1,0 +1,9 @@
+{
+  "name"        : "chat",
+  "version"     : "0.1",
+  "description" : "WebSocket chat for Node.JS",
+  "keywords"    : ["ws", "chat", "mysql"],
+  "homepage"    : "http://shavermus.tk",
+  "author" : { "name": "Denis Klimenko", "email": "emercom996kd@gmail.com" },
+  "license" : "BSD-3-Clause"
+}

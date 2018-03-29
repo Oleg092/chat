@@ -1,0 +1,241 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #dcdcdc;
+}
+.cHidden{
+	display: none;
+}
+#header{
+	background: #222;
+	height: 50px;
+	width: 100%;
+}
+#main{
+	background: #fff;
+	
+}
+#footer{
+	background: #dcdcdc;
+	height: 50px;
+}
+#leftSide{
+	background: #fff;
+	height: 600px;
+	padding-top:10px;
+	border-right: 2px solid #ccc;
+}
+#leftSide ul{
+	list-style: none;
+}
+#content{
+	background: #fff;
+	
+}
+#friendList{
+	border-right: 2px solid #ccc;
+	height: 540px;
+	background: #fff;
+	
+}
+#friendList ul{
+	list-style: none;
+	padding: 0px;
+}
+#friendList ul li a{
+	
+	display: block;
+	padding: 5px;
+}
+#friendList ul li a:hover{
+	background: #ddd;
+}
+.currentPageLink{
+	background: #ddd;
+}
+#friendList ul li a img{
+	width: 48px;
+	height:48px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+#friendListBox{
+	border-top: 1px solid #ccc;
+	height: 480px;
+	overflow-y:scroll;
+	padding: 0px;
+}
+#messages{
+
+}
+#messageBox{
+	border-top: 1px solid #ccc;
+	height: 360px;
+	overflow-y:auto;
+
+
+	
+}
+.message{
+	margin-top:10px;
+}
+
+.messageAvatar img{
+	width: 48px;
+	height:48px;
+	border-radius: 50%;
+}
+.messageText{
+	padding-top:10px;
+}
+#loginBox{
+	padding-left: 0px;
+	padding-top:5px;
+	height: 50px;
+	vertical-align: center;
+	align-content: center;
+}
+#loginBox a{
+	color: white;
+	font-size: 16px;
+	display: block;
+
+	height: 50px;
+	padding-top: 10px;
+	padding-left: 25px;
+	text-decoration: none;
+	
+}
+#loginBox a:hover{
+	background: orange;
+	text-decoration: none;
+}
+#messageEditor{
+	height: 120px;
+	border-top:1px solid #ccc;
+	padding-top: 15px;
+}
+
+.avatar48{
+	width: 48px;
+	height:48px;
+	border-radius: 50%;
+}
+.avatar64{
+	width: 64px;
+	height:64px;
+	border-radius: 50%;
+	border: 3px solid #ccc;
+}
+.avatar_Flist{
+	width: 72px;
+	height:72px;
+	border-radius: 45%;
+	border: 3px solid #ccc;
+}
+#messageEditorAvaUsers{
+	
+	height: 40px;
+	text-align: center;
+}
+#messageEditorTextInput{
+	
+	height: 40px;
+	padding: 0px;
+
+
+}
+#messageEditorTextInput textarea{
+	width: 100%;
+	min-height: 64px;
+}
+#messageEditorAvaUsersFriends{
+	
+	height: 40px;
+	text-align: center;
+
+}
+#messageEditorBox{
+	background: red;
+	height: 60px;
+}
+#pageProfile{
+	padding: 10px;
+}
+#startpage img{
+	height: 400px;
+}
+.currentFriendDialogLink{
+	background: #ddd;
+}
+#logo{
+	/*position: absolute;
+	width: 1140px;
+	height: 50px;
+	border: none;*/
+}
+#lineFriendList{
+	align: center;
+	size: 100px;
+}
+#Button_search_friends{
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	width: 150px;
+	height: 40px;
+}
+#searchMiniPhoto{
+	width: 64px;
+	height:64px;
+	border-radius: 50%;
+	border: 3px solid #ccc;	
+}
+#searchPannel{
+	width: 200px;
+	height: 600px;
+	/*z-index: 1;*/
+
+	position: absolute;
+	left: 750px;
+	border-left: 2px solid #ccc;
+}
+/*#searchPannel ul{
+	list-style: none;
+}*/
+#SearchList{
+	/*z-index: 5;*/
+	width: 750px;
+	/*position: absolute;*/
+	height: 600px;
+	overflow-y: scroll;
+
+}
+#btnAddF{
+
+}
+#Button_search_friends_email{
+	position: absolute;
+	left: 50px;
+	top: 100px;
+	width: 150px;
+	height: 40px;
+}
+#Button_applications_to_friends{
+	position: absolute;
+	left: 50px;
+	top: 150px;
+	width: 150px;
+	height: 40px;
+}
+.user_friends_menu{
+	position: absolute;
+	left:700px;
+}
+.menu_new_fr{
+	position: absolute;
+	left: 100px;
+}
+

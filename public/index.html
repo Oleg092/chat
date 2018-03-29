@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>ВКР соц. сеть</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <div class="row">
+          <div id="logo" class="col-md-2 col-xs-2">
+            <img src="images/logo.png" id="logo" alt="logo"/>
+          </div>
+          <div id="loginBox" class="col-md-3 col-xs-2 col-md-offset-7 col-xs-offset-8">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#authorizeModal" id="signInButton">Войти</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#regModal" id="regButton">Зарегистрироваться</button>
+            <div id="authorizeModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Авторизация</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form class="form-horizontal" role="form" id="formAuthorization">
+                      <div id="infoAuthorize" class="cHidden">
+                      <p class="bg-danger"></p>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputEmail" class="col-sm-2 col-md-3 control-label">Email</label>
+                        <div class="col-sm-10 col-md-9">
+                          <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputPassword" class="col-sm-2 col-md-3 control-label">Пароль</label>
+                        <div class="col-sm-10 col-md-9">
+                          <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10 col-md-offset-3 col-md-9">
+                          <button type="submit" class="btn btn-default" onclick="authorization()">Войти</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+            <div id="regModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel1">Регистрация</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form class="form-horizontal" role="form" id="formRegistration">
+                      <div id="infoRegistration" class="cHidden">
+                      <p class="bg-danger" id="infoRegistrationP"></p>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputEmailReg" class="col-sm-2 col-md-3 control-label">Email</label>
+                        <div class="col-sm-10 col-md-9">
+                          <input type="email" class="form-control" id="inputEmailReg" placeholder="Email">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputNameReg" class="col-sm-2 col-md-3 control-label">Имя</label>
+                        <div class="col-sm-10 col-md-9">
+                          <input type="text" class="form-control" id="inputNameReg" placeholder="Name">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputSurNameReg" class="col-sm-2 col-md-3 control-label">Фамилия</label>
+                        <div class="col-sm-10 col-md-9">
+                          <input type="text" class="form-control" id="inputSurNameReg" placeholder="Sur name">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputLoginReg" class="col-sm-2 col-md-3 control-label">Логин</label>
+                        <div class="col-sm-10 col-md-9">
+                          <input type="text" class="form-control" id="inputLoginReg" placeholder="Login">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputBDReg" class="col-sm-2 col-md-3 control-label">Дата рождения</label>
+                        <div class="col-sm-10 col-md-9">
+                          <input type="text" class="form-control" id="inputBDReg" placeholder="ГГГГ-ММ-ДД">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputPasswordReg" class="col-sm-2 col-md-3 control-label">Пароль</label>
+                        <div class="col-sm-10 col-md-9">
+                          <input type="password" class="form-control" id="inputPasswordReg" placeholder="Password">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10 col-md-offset-3 col-md-9">
+                          <button type="submit" class="btn btn-default" onclick="registration()">Зарегистрироваться</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+            <div id="errorModalNoneWS" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  WebSocket в этом браузере не поддерживается
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="startPage" class="container">
+      <img src="images/start.jpg" width="100%">
+    </div>
+    <div id="main" class="container cHidden">
+      <div class="row">
+        <div id="leftSide" class="col-md-2 col-xs-3">
+          <ul class="nav nav nav-pills nav-stacked">
+            <li><a href="#" id="pageProfileLink" class="page-link">Профиль</a></li>
+            <li><a href="#" id="pageMessagesLink" class="page-link">Диалоги</a></li>
+            <li><a href="#" id="pageDialogueLink" class="page-link">Беседы</a></li>
+            <li><a href="#" id="pageFriendsLink" class="page-link">Друзья</a></li>
+            <li><a href="#" id="pageSearchLink" class="page-link">Поиск пользователей</a></li>
+            <li><a href="#" id="pageSettingsLink" class="page-link">Настройки</a></li>
+            <li><a href="#" id="pagePhotoLink" class="page-link">Фото</a></li>
+            <li><a href="#" id="pageBlackListLink" class="page-link">Черный список</a></li>
+            <li><a href="#" id="pageCommLink" class="page-link">Сообщества</a></li>
+            <li><a href="http://localhost:8080/" id="Out" >Выход</a></li>
+          </ul>
+        </div>
+        <div id="content" class="col-md-10 col-xs-9">
+          <div id="pageProfile" class="row">
+
+          </div>
+          <div id="pageMessages" class="row cHidden">
+            <div id="friendList" class="col-md-3">
+              <h3>Диалоги</h3>
+
+              <div class="row">
+              <div id="friendListBox" class="col-md-12">
+              <ul id="friendListUL">
+                <li>#</li>                
+              </ul>
+              </div>
+              </div>
+            </div>
+            <div id="messages" class="col-md-9">
+              <div>
+              <h3 class="currentDialogFname">#</h3>
+              <div class="row">
+                <div id="messageBox" class="col-md-12">
+
+                </div>
+              </div>
+              <div id="messageEditor" class="row">
+                
+                <div id="messageEditorAvaUsers" class="col-md-2">
+                  
+                </div>
+                <div id="messageEditorTextInput" class="col-md-8">
+                  <div class="row">
+                    <div class="col-md-9" style="padding: 0;">
+                      <textarea id="textMessageArea"></textarea>
+                        
+                    </div>
+                    <div class="col-md-3" style="padding: 1px 0 0 0; text-align: center;">
+                      <button id="sendMessageButton" type="button" class="btn btn-primary" style="height: 60px;">Отправить</button>
+                    </div>
+                  </div>
+                </div>
+                <div id="messageEditorAvaUsersFriends" class="col-md-2">
+                  <img src="./avatars/avatar49250.jpg" class="avatar64" id="messageEditorAvaUsersFriendsImg">
+                </div>
+                
+              </div>            
+            </div>
+            </div>
+          </div>
+          <div id = "pageDialogue" class="row cHidden"> <!--блок бесед-->
+            <h3>пепячник</h3>
+
+          </div>
+          <div id="pageFriends" class="row cHidden">
+            <h3>Ваши друзья</h3>
+              
+            <hr id='lineFriendList'>
+            <div id="friendListBoxPage">
+            </div>
+          </div>
+          <div id="pageSearch" class="row cHidden">
+                <div id="searchModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Введите критерии поиска</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form class="form-horizontal" role="form" id="formSearchFriends">
+                      <div id="infoSearchFriends" class="cHidden">
+                      <p class="bg-danger"></p>
+                      </div>
+                      <!--<div class="form-group">
+                        <label for="inputEmail" class="col-sm-2 col-md-3 control-label">Email</label>
+                        <div class="col-sm-10 col-md-9">
+                          <input type="email" class="form-control" id="inputEmailSearch" placeholder="Email">
+                        </div>
+                      </div>-->
+                      <div class="form-group">
+                        <label for="inputNameSearch" class="col-sm-2 col-md-3 control-label">Имя</label>
+                        <div class="col-sm-10 col-md-9">
+                          <input type="text" class="form-control" id="inputNameSearch" placeholder="Name">
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label for="inputSurnameSearch" class="col-sm-2 col-md-3 control-label">Фамилия</label>
+                        <div class="col-sm-10 col-md-9">
+                          <input type="text" class="form-control" id="inputSurNameSearch" placeholder="Sur_name">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputLoginSearch" class="col-sm-2 col-md-3 control-label">Login</label>
+                        <div class="col-sm-10 col-md-9">
+                          <input type="text" required="true" class="form-control" id="inputLoginSearch" placeholder="Login">
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label for="inputSexSearch" class="col-sm-2 col-md-3 control-label">Мужской</label>
+                         <div class="col-sm-10 col-md-9">
+                          <input type="checkbox" name="sexm" value="m" class="form-control" id="inputSexSearchm">
+                         </div> 
+                        <label for="inputSexSearch" class="col-sm-2 col-md-3 control-label">Женский</label>
+                        <div class="col-sm-10 col-md-9">
+                          <input type="checkbox" name="sexzh" value="zh" class="form-control" id="inputSexSearch">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputSearchOption" class="col-sm-2 col-md-3 control-label">Точный поиск</label>
+                         <div class="col-sm-10 col-md-9">
+                          <input type="checkbox" name="searchOption" value="1" class="form-control" id="inputSearchOption">
+                         </div>
+                      </div>   
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10 col-md-offset-3 col-md-9">
+                          <button type="submit" class="btn btn-default" onclick="searchFriends()">Поиск</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+              <!--поиск по емейлу-->
+              <div id="searchModalByEmail" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Введите Email пользователя</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form class="form-horizontal" role="form" id="formSearchFriends">
+                      <div id="infoSearchFriends" class="cHidden">
+                      <p class="bg-danger"></p>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputEmail" class="col-sm-2 col-md-3 control-label">Email</label>
+                        <div class="col-sm-10 col-md-9">
+                          <input type="email" class="form-control" id="inputEmailSearch" placeholder="Email">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10 col-md-offset-3 col-md-9">
+                          <button type="submit" class="btn btn-default" onclick="searchFriendsByEmail()">Поиск</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+            <div id="newFriends" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  <div class="modal-header" id="newFriendsList">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Заявки в друзья:</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form class="form-horizontal" role="form" id="formSearchFriends">
+                      <div id="infoSearchFriends" class="cHidden">
+                      <p class="bg-danger"></p>
+                      </div>
+                      <div class="form-group">
+                      <H3 id = "notNFriends">У вас пока нет заявок в друзья</H3>
+                        <!--<label for="inputEmail" class="col-sm-2 col-md-3 control-label">Email</label>
+                        <div class="col-sm-10 col-md-9">
+                          <input type="email" class="form-control" id="inputEmailSearch" placeholder="Email">
+                        </div>-->
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10 col-md-offset-3 col-md-9">
+                         <!-- <button type="submit" class="btn btn-default" onclick="searchFriendsEmail()">Поиск</button>-->
+                        </div>
+                      </div>
+                    </form>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+            <div id="SearchList" class="col-md-12">
+
+            </div>
+             <div id="searchPannel">
+              <ul class="nav nav nav-pills nav-stacked">
+               <button class="btn btn-primary" data-toggle="modal" data-target="#searchModal" id="Button_search_friends">Поиск по критериям </button>
+               <h2>Меню поиска: </h2>
+               <button class="btn btn-primary" data-toggle="modal" data-target="#searchModalByEmail" 
+                  id="Button_search_friends_email">Поиск по email 
+               </button>
+               <button class="btn btn-primary" data-toggle="modal" data-target="#newFriends"
+                  id="Button_applications_to_friends">заявки в друзья 
+               </button>
+               </ul>
+            </div>
+          </div>
+          <div id="pageSettings" class="row cHidden"> <!--блок настроек-->
+            <h3>Настройки</h3>
+          </div>
+          <div id="pagePhoto" class="row cHidden"> <!--блок фотографий-->
+            <h3>pepyachnik 2</h3>
+          </div>
+          <div id="pageBlackList" class="row cHidden"> <!--блок черный список-->
+            <h3>pepyachnik 3</h3>
+          </div>
+           <div id="pageComm" class="row cHidden"> <!--блок черный список-->
+            <h3>pepyachnik 4</h3>
+          </div>
+        </div>
+      </div>
+      <div id="footer" class="row">
+        
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./js/jquery-2.2.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/chat-client.js"></script>
+    <audio src="./audio/pdasms.mp3" id="audio"></audio>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+INSERT INTO users (login, email, pass, sex, berd_date, name, sur_name) VALUES ('Lapulka', 'Queen@mail.ru', 'LunaKurit', '0', '1999-03-11', 'Vadiana', 'Jasnova');
