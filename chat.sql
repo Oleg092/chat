@@ -1,7 +1,7 @@
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
---
+--base
 -- Хост: localhost
 -- Время создания: Июл 21 2017 г., 15:39
 -- Версия сервера: 5.7.19-0ubuntu0.16.04.1
